@@ -63,7 +63,8 @@
   "scripts": {
     "start": "EXTEND_ESLINT=true GENERATE_SOURCEMAP=false node scripts/start.js",
     "build": "EXTEND_ESLINT=true GENERATE_SOURCEMAP=false node scripts/build.js",
-    "test": "EXTEND_ESLINT=true node scripts/test.js"
+    "test": "EXTEND_ESLINT=true node scripts/test.js",
+    "deploy": "surge --domain fluentui-react-wc-react-wrapped.surge.sh"
   },
   "eslintConfig": {
     "extends": [
