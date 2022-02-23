@@ -8,7 +8,7 @@ import {  provideReactWrapper } from '@microsoft/fast-react-wrapper';
 import {  fluentButton, provideFluentDesignSystem } from 'fluent-wc-v9';
 
 const { wrap } = provideReactWrapper(React);
-export const FluentButton = wrap(fluentButton(), {name: 'fluent-button', properties: ['appearance']});
+export const FluentButton = wrap(fluentButton() as any, {name: 'fluent-button', properties: ['appearance']});
 
 provideFluentDesignSystem().register(fluentButton())
 
