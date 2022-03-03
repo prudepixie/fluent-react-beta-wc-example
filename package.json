@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.16.0",
+    "@fluentui/react-components": "^9.0.0-rc.3",
+    "@fluentui/react-theme": "^9.0.0-rc.1",
     "@microsoft/fast-react-wrapper": "^0.1.30",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
     "@svgr/webpack": "^5.5.0",
@@ -11,10 +12,6 @@
     "@types/node": "^16.11.25",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
-    "babel-jest": "^27.4.2",
-    "babel-loader": "^8.2.3",
-    "babel-plugin-named-asset-import": "^0.3.8",
-    "babel-preset-react-app": "^10.0.1",
     "bfj": "^7.0.2",
     "browserslist": "^4.18.1",
     "camelcase": "^6.2.1",
@@ -27,7 +24,6 @@
     "eslint-config-react-app": "^7.0.0",
     "eslint-webpack-plugin": "^3.1.1",
     "file-loader": "^6.2.0",
-    "fluent-wc-v9": "file:../fluent-v9-example-wc",
     "fs-extra": "^10.0.0",
     "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
@@ -50,19 +46,21 @@
     "resolve-url-loader": "^4.0.0",
     "sass-loader": "^12.3.0",
     "semver": "^7.3.5",
-    "source-map-loader": "^3.0.0",
+    "source-map-explorer": "^2.5.2",
+    "source-map-loader": "^3.0.1",
     "style-loader": "^3.3.1",
-    "tailwindcss": "^3.0.2",
     "terser-webpack-plugin": "^5.2.5",
     "typescript": "^4.5.5",
     "webpack": "^5.64.4",
     "webpack-dev-server": "^4.6.0",
     "webpack-manifest-plugin": "^4.0.2",
-    "workbox-webpack-plugin": "^6.4.1"
+    "workbox-webpack-plugin": "^6.4.1",
+    "yargs": "^17.3.1"
   },
   "scripts": {
-    "start": "EXTEND_ESLINT=true GENERATE_SOURCEMAP=false node scripts/start.js",
-    "build": "EXTEND_ESLINT=true GENERATE_SOURCEMAP=false node scripts/build.js",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "start": "EXTEND_ESLINT=true node scripts/start.js",
+    "build": "EXTEND_ESLINT=true node scripts/build.js",
     "test": "EXTEND_ESLINT=true node scripts/test.js",
     "deploy": "surge --domain fluentui-react-wc-react-wrapped.surge.sh"
   },
@@ -133,13 +131,16 @@
     ],
     "resetMocks": true
   },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
-  },
   "devDependencies": {
-    "@fluentui/react-components": "^9.0.0-rc.3",
-    "babel-plugin-transform-decorators-legacy": "^1.3.5"
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-proposal-decorators": "^7.17.2",
+    "@babel/plugin-transform-flow-strip-types": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "@babel/preset-typescript": "^7.12.7",
+    "@babel/runtime": "^7.12.5",
+    "babel-loader": "^8.2.2"
   }
 }

@@ -1,3 +1,21 @@
 {
-    "plugins": ["transform-decorators-legacy"]
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": {
+        "browsers": ["last 1 version", "safari >= 7"]
+      },
+      "useBuiltIns": false
+    }]
+  ],
+    "plugins": [
+      ["@babel/plugin-transform-flow-strip-types"],
+      ["@babel/plugin-proposal-decorators", { "legacy": true }],
+      ["@babel/plugin-proposal-class-properties", { "loose": true }],
+      [
+        "@babel/plugin-transform-runtime",
+        {
+          "regenerator": true
+        }
+      ]
+    ]
 }
